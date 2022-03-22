@@ -1,11 +1,10 @@
-import { v4 as uuidv4 } from "uuid";
+import {v4 as uuidv4} from "uuid";
 
 let chillHop = () => {
   return [
     {
       name: "LA BOHÈME",
-      cover:
-        "https://chillhop.com/wp-content/uploads/2022/03/2ac741e8e52e0008d1fb9cbfcdacd2cf9eaef2db-300x300.jpg",
+      cover: "https://chillhop.com/wp-content/uploads/2022/03/2ac741e8e52e0008d1fb9cbfcdacd2cf9eaef2db-300x300.jpg",
       artist: "C Y G N",
       audio: "https://mp3.chillhop.com/serve.php/?mp3=31589",
       color: ["#2A2720", "#2D9132"],
@@ -14,8 +13,7 @@ let chillHop = () => {
     },
     {
       name: "Seagulls",
-      cover:
-        "https://chillhop.com/wp-content/uploads/2022/01/5753da482a6839b31e4905b22a2f8d65913e7eb4-300x300.jpg",
+      cover: "https://chillhop.com/wp-content/uploads/2022/01/5753da482a6839b31e4905b22a2f8d65913e7eb4-300x300.jpg",
       artist: "Misha, Zmeyev, Viktor Minsky",
       audio: "https://mp3.chillhop.com/serve.php/?mp3=28936",
       color: ["#5F95AD", "#FFE1C7"],
