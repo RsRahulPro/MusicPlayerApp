@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect, useRef } from "react";
+import "./stylesheets/app.scss";
+
+//Adding all components
+import Player from "./components/Player";
+import Song from "./components/Song";
+
+//importing util
+import data from "./util.js";
 
 function App() {
+  let [songs, setSongs] = useState(data());
+  let [songState, setSongState] = useState(false);
+  let [currentSong, setCurrentSong] = useState(
+    songs.filter((song) => song.active)[0]
+  );
+  let firstRender = useRef(true);
+
+  useEffect(() => {
+    console.log("Page Rendered");
+    setCurrentSong(songs.filter((song) => song.active)[0]);
+    console.log(`The current song is ${currentSong.name}`);
+    console.log(`The song state currently is ${songState}\n\n`);
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Song currentSong={currentSong} />
+      <Player
+        currentSong={currentSong}
+        setCurrentSong={setCurrentSong}
+        songs={songs}
+        setSongs={setSongs}
+        songState={songState}
+        setSongState={setSongState}
+        firstRender={firstRender}
+      />
     </div>
   );
 }
