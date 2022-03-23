@@ -10,7 +10,7 @@ import data from "./util.js";
 
 function App() {
   let [songs, setSongs] = useState(data());
-  let [songState, setSongState] = useState(false);
+  let [isPlaying, setIsPlaying] = useState(false);
   let [currentSong, setCurrentSong] = useState(songs.filter((song) => song.active)[0]);
 
   return (
@@ -21,8 +21,8 @@ function App() {
         setCurrentSong={setCurrentSong}
         songs={songs}
         setSongs={setSongs}
-        songState={songState}
-        setSongState={setSongState}
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
       />
     </div>
   );
